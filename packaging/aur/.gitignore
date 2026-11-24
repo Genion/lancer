@@ -1,0 +1,9 @@
+src/
+pkg/
+*.AppImage
+*.pkg.tar.zst
+.SRCINFO
+lancer-harness-bin-*.png
+lancer-harness-bin-*-LICENSE
+lancer-harness-nightly-bin-*.png
+lancer-harness-nightly-bin-*-LICENSE

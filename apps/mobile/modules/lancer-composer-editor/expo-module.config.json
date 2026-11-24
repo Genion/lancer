@@ -1,0 +1,9 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["LancerComposerEditorModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.lancercomposereditor.LancerComposerEditorModule"]
+  }
+}

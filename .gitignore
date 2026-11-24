@@ -1,70 +1,63 @@
-node_modules/
-*.tsbuildinfo
-.turbo/
-plans/
-dist/
-build/
-out/
-# Process-pack output slots are contract folders, not build artifacts.
-!packages/video-learn-process/**/out/
-!packages/video-learn-process/**/out/**
-release/
-release-*/
-.cache/
-# Local verification evidence, app backups, and package-manager cache.
-/.artifacts/
-/.pnpm-store/
-playwright-report/
-test-results/
-.claude/worktrees/
-.codex/worktrees/
+node_modules
+.bun
+.turbo
 .DS_Store
-tmp-chat-parity.png
-tmp-latest-design.png
-tmp-sample-design.png
+*.log
+*.tsbuildinfo
+apps/*/dist
+apps/*/dist-exe
+infra/*/dist
+.astro
+packages/*/dist
+.env
+.env.local
+build/
+.logs/
+release/
+release-mock/
+.t3
+.idea/
+apps/web/.playwright
+apps/web/playwright-report
+apps/web/src/components/__screenshots__
+.vitest-*
+__screenshots__/
+.tanstack
+squashfs-root/
+.vercel
+.gstack/
+.plans/
+/audits/
+dist-electron/
+.electron-runtime/
+.showcase/
+apps/mobile/.showcase/
+apps/mobile/.generated/
+apps/mobile/.android-cache/
+/.generated/
+artifacts/app-store/screenshots/
+artifacts/mobile-e2e/
+artifacts/mobile-behavior/
+.github/pr-assets/
+native/**/target/
+node_modules/
+.alchemy/
+*.log
+.env*
+!.env.example
 
-# Vite dev build artifacts
-*.js
-*.css
-!/apps/**/*.js
-!/apps/**/*.css
-!/packages/**/*.js
-!/packages/**/*.css
-index.html
-!apps/**/index.html
-!packages/light-ui/demo/index.html
+# pnpm content-addressable store; never belongs in the repo.
+.pnpm-store/
 
-# Vite hashed build output (anywhere).
-# Require hex-only 8-char suffixes so hand-authored names like
-# process-evidence.css (letter-only suffix) are not matched.
-*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].js
-*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].css
+.lancer-runtime/
+.lancer/
 
-# Keep desktop source CSS tracked even if a future hash pattern widens.
-!/apps/desktop/src/**/*.css
+# Optional remote build cache configuration for this checkout.
+/.task-cache.json
 
-# Hand-authored assets for the zero-build local control dashboard.
-!/scripts/lancer-ctl-dashboard/dashboard.js
-!/scripts/lancer-ctl-dashboard/dashboard.css
-
-# Local verification evidence (verify-pi-gui runs, proof workspaces)
-/.artifacts/
-
-# Project-local received media and runtime evidence, never source.
-/.lancer/
-
-# Per-project video-learning runtime artifacts (the process template lives in packages/).
-/_gates/
-/inbox/
-/raw/
-/learning/
-/remake/
-
-# Reviewed public template only; actual environment files stay private.
-!/.env.example
-
-# Coding-agent eval runs. Reports are produced by a run and are not source.
-/evals/runs/
-/evals/.cache/
-/evals/**/__pycache__/
-/evals/**/*.pyc
+# Optional test data restored from the pinned public upstream commit.
+/apps/server/src/orchestration-v2/testkit/fixtures/**/*.ndjson
+/apps/server/scripts/dev-replay/*.ndjson
+/evals/mcp-tool-use/cases/*.ndjson
+/evals/mcp-tool-use/templates/*.json.gz
+/scripts/fixtures/desktop-launch/*.sqlite

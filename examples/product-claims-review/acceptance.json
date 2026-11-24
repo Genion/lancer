@@ -1,0 +1,54 @@
+{
+  "sku": "NL-R600",
+  "revision": "B",
+  "cases": {
+    "C1": {
+      "decision": "approve",
+      "copy": "Holds 600 mL.",
+      "requires": {
+        "ENG-17": ["The approved fill capacity is 600 mL."]
+      }
+    },
+    "C2": {
+      "decision": "revise",
+      "copy": "Hand wash the bottle body.",
+      "requires": {
+        "CARE-09": [
+          "Hand wash the bottle body.",
+          "The replacement finish was qualified for hand washing only."
+        ]
+      }
+    },
+    "C3": {
+      "decision": "hold",
+      "copy": "Ridge 600 commuter bottle.",
+      "requires": {
+        "PACK-31": ["Pack two lids with each bottle."],
+        "QA-08": ["Each of the six sealed cartons checked contained one lid."]
+      },
+      "question_requirements": {
+        "the revision": ["revision B", "rev B", "rev. B", "rev-B", "revision-B"],
+        "one lid": ["one", "1"],
+        "two lids": ["two", "2"],
+        "the disputed item": ["lid", "lids"],
+        "a local check or record": [
+          "recount",
+          "re-count",
+          "count again",
+          "inspect",
+          "inspection",
+          "recheck",
+          "re-check",
+          "packing guide",
+          "packing instruction",
+          "packing record",
+          "packing list",
+          "carton check",
+          "carton count",
+          "PACK-31",
+          "QA-08"
+        ]
+      }
+    }
+  }
+}

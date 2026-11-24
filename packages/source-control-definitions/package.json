@@ -1,0 +1,23 @@
+{
+  "name": "@lancer/source-control-definitions",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./registry": {
+      "types": "./src/registry.ts",
+      "import": "./src/registry.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "effect-tsgo tsrs --noEmit"
+  },
+  "dependencies": {
+    "@lancer/source-control-azure-devops": "workspace:*",
+    "@lancer/source-control-bitbucket": "workspace:*",
+    "@lancer/source-control-core": "workspace:*",
+    "@lancer/source-control-forgejo": "workspace:*",
+    "@lancer/source-control-gitcafe": "workspace:*",
+    "@lancer/source-control-github": "workspace:*",
+    "@lancer/source-control-gitlab": "workspace:*"
+  }
+}

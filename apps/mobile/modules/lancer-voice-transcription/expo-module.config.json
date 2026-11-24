@@ -1,0 +1,10 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["LancerVoiceTranscriptionModule"],
+    "podspecPath": "ios/LancerVoiceTranscription.podspec"
+  },
+  "android": {
+    "modules": ["expo.modules.lancervoicetranscription.LancerVoiceTranscriptionModule"]
+  }
+}
