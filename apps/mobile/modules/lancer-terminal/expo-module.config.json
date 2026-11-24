@@ -1,0 +1,10 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["LancerTerminalModule"],
+    "podspecPath": "LancerTerminalNative.podspec"
+  },
+  "android": {
+    "modules": ["expo.modules.lancerterminal.LancerTerminalModule"]
+  }
+}

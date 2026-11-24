@@ -1,0 +1,18 @@
+{
+  "name": "@lancer/secret-provider-definitions",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./registry": {
+      "types": "./src/registry.ts",
+      "import": "./src/registry.ts"
+    }
+  },
+  "scripts": {
+    "typecheck": "effect-tsgo tsrs --noEmit"
+  },
+  "dependencies": {
+    "@lancer/secret-provider-core": "workspace:*",
+    "@lancer/secret-provider-onepassword": "workspace:*"
+  }
+}

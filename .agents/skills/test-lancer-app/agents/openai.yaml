@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lancer App Testing"
+  short_description: "Test web and desktop in Lancer’s Browser panel"
+  default_prompt: "Use $test-lancer-app to verify the affected web or desktop flow through Lancer’s Browser panel."

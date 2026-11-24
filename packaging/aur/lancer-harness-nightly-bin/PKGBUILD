@@ -1,0 +1,105 @@
+# Lancer Harness AppImage packaging template
+
+pkgname=lancer-harness-nightly-bin
+pkgver=0.0.34_nightly.20260814.1095
+pkgrel=1
+pkgdesc='Nightly local workspace for business agents'
+arch=('x86_64')
+url='https://github.com/raylee-ai/lancer'
+license=('MIT')
+depends=(
+  'alsa-lib'
+  'at-spi2-core'
+  'cairo'
+  'dbus'
+  'expat'
+  'gdk-pixbuf2'
+  'glib2'
+  'glibc'
+  'gtk3'
+  'hicolor-icon-theme'
+  'libcups'
+  'libdrm'
+  'libgcc'
+  'libstdc++'
+  'libx11'
+  'libxcb'
+  'libxcomposite'
+  'libxdamage'
+  'libxext'
+  'libxfixes'
+  'libxkbcommon'
+  'libxrandr'
+  'mesa'
+  'nspr'
+  'nss'
+  'pango'
+  'systemd-libs'
+  'xdg-utils'
+  'zlib'
+)
+optdepends=('openai-codex: use the system-installed Codex CLI')
+provides=("lancer-nightly=$pkgver")
+conflicts=('lancer-nightly' 'lancer')
+options=('!debug' '!strip')
+
+_upstream_version="${pkgver/_nightly./-nightly.}"
+_appimage="Lancer-${_upstream_version}-x86_64.AppImage"
+source=(
+  "$_appimage::https://github.com/raylee-ai/lancer/releases/download/harness-v${_upstream_version}/$_appimage"
+  "${pkgname}-${pkgver}-LICENSE::https://raw.githubusercontent.com/raylee-ai/lancer/harness-v${_upstream_version}/LICENSE"
+)
+sha256sums=(
+  'RELEASE_SHA256' # AppImage
+  'RELEASE_SHA256' # upstream license
+)
+
+prepare() {
+  chmod +x "$srcdir/$_appimage"
+  rm -rf "$srcdir/squashfs-root"
+  "$srcdir/$_appimage" --appimage-extract >/dev/null
+
+  if [[ ! -x "$srcdir/squashfs-root/AppRun" ||
+        ! -f "$srcdir/squashfs-root/chrome-sandbox" ]]; then
+    echo 'The AppImage payload is missing its launcher or Chromium sandbox.' >&2
+    return 1
+  fi
+}
+
+package() {
+  install -d "$pkgdir/opt/$pkgname"
+  cp -a --no-preserve=ownership "$srcdir/squashfs-root/." "$pkgdir/opt/$pkgname/"
+  chmod -R u=rwX,go=rX "$pkgdir/opt/$pkgname"
+  chmod 4755 "$pkgdir/opt/$pkgname/chrome-sandbox"
+
+  install -Dm755 /dev/stdin "$pkgdir/usr/bin/lancer-nightly" <<'EOF'
+#!/bin/sh
+exec /opt/lancer-harness-nightly-bin/AppRun "$@"
+EOF
+  ln -s lancer-nightly "$pkgdir/usr/bin/lancer-nightly-desktop"
+
+  # Icon lookup only sees sizes registered in hicolor's index.theme (max 512x512).
+  local icon size_dir
+  for icon in "$srcdir"/squashfs-root/usr/share/icons/hicolor/*/apps/lancer.png; do
+    size_dir="${icon%/apps/lancer.png}"
+    install -Dm644 "$icon" \
+      "$pkgdir/usr/share/icons/hicolor/${size_dir##*/}/apps/lancer-nightly.png"
+  done
+
+  install -Dm644 /dev/stdin "$pkgdir/usr/share/applications/lancer.desktop" <<'EOF'
+[Desktop Entry]
+Name=Lancer Harness Nightly
+Comment=Nightly local workspace for business agents
+Exec=lancer-nightly %U
+TryExec=lancer-nightly
+Terminal=false
+Type=Application
+Icon=lancer-nightly
+StartupWMClass=lancer
+Categories=Development;
+MimeType=x-scheme-handler/lancer;
+EOF
+
+  install -Dm644 "$srcdir/${pkgname}-${pkgver}-LICENSE" \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@lancer/mobile-terminal-native",
+  "version": "0.0.0",
+  "private": true,
+  "expo-module": {
+    "ios": {
+      "modules": [
+        "LancerTerminalModule"
+      ]
+    },
+    "android": {
+      "modules": [
+        "expo.modules.lancerterminal.LancerTerminalModule"
+      ]
+    }
+  }
+}

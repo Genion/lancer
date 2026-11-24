@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Lancer Mobile"
+  short_description: "Test iOS and Android in Lancer’s Device panel"
+  default_prompt: "Use $test-lancer-mobile to verify the affected native mobile flow through Lancer’s Device panel and AgentDevice."

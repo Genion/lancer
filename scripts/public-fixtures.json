@@ -1,0 +1,2522 @@
+{
+  "commit": "d0f1f7200dce1229f75314b3d9eb1d7ac3abb607",
+  "brandTokenPattern": "t3[ ._-]?code|lancer|t3tools|\\bt3(?=\\b|_)",
+  "files": {
+    "apps/server/scripts/dev-replay/showcase_transcript.ndjson": {
+      "upstreamBlob": "2dac3e4d7f6fc4cc35d0c57ee3258741f0cc1555"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/acp_elicitation/registry_transcript.ndjson": {
+      "upstreamBlob": "1a7f436b530aa6098ea6d91244f826d572773f4d",
+      "resultBlob": "aaeba221c75c35e8edc100d96888f241aa6c7f66",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/acp_titled_multiselect/registry_transcript.ndjson": {
+      "upstreamBlob": "55cf50b553cb53cf08cae10849c87ca0cb7c2c59",
+      "resultBlob": "aefd129aa751ed083601a78cde7b6d7d7529a884",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_monitor_wake/claude_transcript.ndjson": {
+      "upstreamBlob": "afc19f75dc29594001483b12d3be3f16405c650d"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_subagent_after_root/claude_transcript.ndjson": {
+      "upstreamBlob": "9a528c2480bab9b4d26b68b2d46661a75bac3374"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_subagent_lifecycle/claude_transcript.ndjson": {
+      "upstreamBlob": "6c9bad42c0fbb1c109ef95ca14f57f51246007bf"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_task_after_root/claude_transcript.ndjson": {
+      "upstreamBlob": "123c4b54b968ae073e556045f1a9ebecd792c21b"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_task_interrupt/claude_transcript.ndjson": {
+      "upstreamBlob": "99f6315407d7f9ef6d467d42f2353dd39a56c03d"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_task_wake/claude_transcript.ndjson": {
+      "upstreamBlob": "46441bc964912d8354b7d4d4623910c0f39b5c48"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_wake_before_queued_prompt/claude_transcript.ndjson": {
+      "upstreamBlob": "e2b88ec9340ff4f3d464298af12f0ebdcfbd132d"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_background_wake_before_queued_prompt_no_echo/claude_transcript.ndjson": {
+      "upstreamBlob": "41b76e3f07a207b1f011014df4b3bd77943f0499"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_compact_after_peer_turn/claude_transcript.ndjson": {
+      "upstreamBlob": "a6b03a4e4530fbbe4f8cd86b72383c01bdc6ae84"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_compact_after_peer_turn_no_echo/claude_transcript.ndjson": {
+      "upstreamBlob": "b0f987bb6ef64e3fc47009c42a019ac4238040cb"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_compact_after_resume_wake/claude_transcript.ndjson": {
+      "upstreamBlob": "cdd4f76c53000bfbf7290018a5fd51bd0ebaf2ef"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_idle_resume/claude_transcript.ndjson": {
+      "upstreamBlob": "cdc0f801e607eb5c891152225fe65b5c8318a5d1"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_local_bash_task/claude_transcript.ndjson": {
+      "upstreamBlob": "b7d8d2524dc809305afa26818658e326f9bcba5b",
+      "resultBlob": "6bde738eeecc98e374ea92cbd70293448796cbea",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_mcp_tool_presentation/claude_transcript.ndjson": {
+      "upstreamBlob": "150d6f4866fa356087710105b6dabca038288a27"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_nested_background_subagent_wake/claude_transcript.ndjson": {
+      "upstreamBlob": "a6b03d62e92a55702fdf02f80bd496e2e000a6c0"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_nested_subagent_model/claude_transcript.ndjson": {
+      "upstreamBlob": "5859782009c611da992d435a9e5bd25906e50c05"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_result_is_error/claude_transcript.ndjson": {
+      "upstreamBlob": "2597109378ee2b800566bc59074b0b4bf3b474a4"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/claude_subagent_resume_after_restart/claude_transcript.ndjson": {
+      "upstreamBlob": "3843dfb6cbfa9a91cf0027fad9f3969ce417fe80"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/codex_model_reroute/codex_transcript.ndjson": {
+      "upstreamBlob": "e91a821916d24bb8b422fb28d700eff9902291d6",
+      "resultBlob": "953b10bb90638bb681a4c703dd20dd0fd0a2865f",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/command_output_streaming/claude_transcript.ndjson": {
+      "upstreamBlob": "3eb36167f4e7e210f886c344a02909885b5c24ed"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/command_output_streaming/codex_transcript.ndjson": {
+      "upstreamBlob": "baa2079c92c5e9013d81bc0581e0343adb4d057d",
+      "resultBlob": "bae5715134343eed11e4341b98ab87b9186c15cd",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/delegated_task_status/codex_transcript.ndjson": {
+      "upstreamBlob": "f1e0d1ab3e7fb85d116da5d5c5da7e3d90584e7c",
+      "resultBlob": "450c224d57316773df16e28ce3a34af6127ee554",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/fx_early_stop/fx_transcript.ndjson": {
+      "upstreamBlob": "5c684b21bc327be7716e12b65e2b3702770ac7db",
+      "resultBlob": "fe855f8f906eb777d036910a218376cb713ef68f",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/fx_subagent/fx_transcript.ndjson": {
+      "upstreamBlob": "e2ddcf46159a36214c1eee31fc6ef5e701c715c2",
+      "resultBlob": "cff9f71658c425fddaafe565b16e6965a540bf41",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_auto_blocked_command/grok_transcript.ndjson": {
+      "upstreamBlob": "df6aab256644c4c85539b8a7a61b417269c69b41",
+      "resultBlob": "9d6db1d5c42a4543d26281c8748fe3729c0ea78f",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_background_bash/grok_transcript.ndjson": {
+      "upstreamBlob": "d8ecb1438f14f5113963ca1f7a367bde2dcc5ac3",
+      "resultBlob": "c87de1cf3d76d4ca0ccdbc9a49acabfeb089f938",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_background_bash_fast_wake/grok_transcript.ndjson": {
+      "upstreamBlob": "816301f66a9ae48c5b55e0d818d2be8910442f8d",
+      "resultBlob": "787c3f771dcefa4349978ec089dfd78044039750",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_background_subagent/grok_transcript.ndjson": {
+      "upstreamBlob": "92a295504b639dcfb6394d70ffb75478ad0ea1ae",
+      "resultBlob": "fce862bab8e2b3af650e463722481e83b261cf10",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_monitor/grok_transcript.ndjson": {
+      "upstreamBlob": "d513513fad0b2de102c4c320bb1d193b0bdecbf7",
+      "resultBlob": "0866686359a4216d48f93b801c25795ac7cef1da",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_prompt_error/grok_transcript.ndjson": {
+      "upstreamBlob": "9fa307acc195a6ce2e8ccd2756fcb503dff868e1",
+      "resultBlob": "edf4f76c44847d58773d1ac75c3a60ee9601806b",
+      "edits": [
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          11,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          18,
+          "lancer"
+        ],
+        [
+          27,
+          "lancer"
+        ],
+        [
+          28,
+          "lancer"
+        ],
+        [
+          32,
+          "lancer"
+        ],
+        [
+          35,
+          "lancer"
+        ],
+        [
+          39,
+          "lancer"
+        ],
+        [
+          42,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/grok_subagent_lineage/grok_transcript.ndjson": {
+      "upstreamBlob": "4e09c1a6039f4eb5ad0d477b64bc2309b7e9a9ef",
+      "resultBlob": "0daa57b711a08c4b9b1d2df6622d94ad0279fee8",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_cloud_config/kiro_transcript.ndjson": {
+      "upstreamBlob": "e4b6ab19b2f30654bb961fdf13c7d04f5443b31d",
+      "resultBlob": "a0dfe13cc35604dba48c7a104e0a24b81fbe1476",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_compaction/kiro_transcript.ndjson": {
+      "upstreamBlob": "6dce2f2ccb9f4c0ff6ab55ac1ceb7b339fc8a040",
+      "resultBlob": "b8ac4794324faa256512f24c06e9d9f594bf490e",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_effort/kiro_transcript.ndjson": {
+      "upstreamBlob": "2b613ee1100fc1025eb9b791fedaee3b78e42697",
+      "resultBlob": "433c9a9fd3d6f021676490696a1c701c02dbb70a",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_fork_from_turn/kiro_transcript.ndjson": {
+      "upstreamBlob": "aac368e4d4838635af52dc709ab80b1acbea3329",
+      "resultBlob": "abd32a5076af117392873c9a29aeadaf65796e1d",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_message_steering/kiro_transcript.ndjson": {
+      "upstreamBlob": "519feac99d2c4892b4dc5a74baf974688296d542",
+      "resultBlob": "a72db0f2e1bc5b055bede4a5d6bc3948a611c1ef",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_model_switch/kiro_transcript.ndjson": {
+      "upstreamBlob": "7e1ea7301c2c33c804a2ab2b7d41474730e18819",
+      "resultBlob": "6b161ea28fa7d72bbc1333cb98614d6b2bcda8df",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          7,
+          "Lancer"
+        ],
+        [
+          8,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_permission_modes/kiro_full_access_transcript.ndjson": {
+      "upstreamBlob": "05a5adb1f805d4b9fbac08f8634afcc8ee22c2f0",
+      "resultBlob": "cb97f057f6dd9547dcd6d28e109e5b6efc50e9d8",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_permission_modes/kiro_supervised_transcript.ndjson": {
+      "upstreamBlob": "fa569a6db3044e9ea96188c39c0e35b1f581d91f",
+      "resultBlob": "16e16c54526819de5db0edb5d08925b35a7134cf",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_subagent_interrupt/kiro_transcript.ndjson": {
+      "upstreamBlob": "65151441473efa612f24bed07d090663f830721c",
+      "resultBlob": "eefe618b19800163069b58dc93129852c649da70",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/kiro_unknown_model/kiro_transcript.ndjson": {
+      "upstreamBlob": "4f1a1de7cddbfcc57d640e1ac76cb3e7a7dee3be",
+      "resultBlob": "ef3b97d133eba79fd2ba8ac0e0c34f5e41edf451",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          9,
+          "Lancer"
+        ],
+        [
+          10,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/malformed_session_update/registry_transcript.ndjson": {
+      "upstreamBlob": "3d21491ad20d4b14a7586b0c7c45e8a2de740ae3",
+      "resultBlob": "3116d2591b19f15682227b91e41fc114e54bcda3",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/claude_transcript.ndjson": {
+      "upstreamBlob": "a1cacf97d8002ca10964a98f6c06c9070a3b7447"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/codex_transcript.ndjson": {
+      "upstreamBlob": "e96c81c5444cb6ca3aa098189d4c1f552a7b95f6",
+      "resultBlob": "08fd431b6ad60aecf3afa01af83868d609db7785",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/cursor_transcript.ndjson": {
+      "upstreamBlob": "47838ffc8e35ee51f746d8db247eee48a6f669f1"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/fx_transcript.ndjson": {
+      "upstreamBlob": "75ed31f7fdb3c2941281f5de44dd224ac7903048",
+      "resultBlob": "a1426a15a4f39735cd7e96b20c7e4754623a4e3a",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/grok_transcript.ndjson": {
+      "upstreamBlob": "a7f4f9fbbd8cf693583868a264fd0dd4bb3b3beb",
+      "resultBlob": "205177e48b52509934eaf5f93ae6ab2d3258a73b",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/pi_transcript.ndjson": {
+      "upstreamBlob": "907bf6618b41c9d788a011ca64822a72d7be726c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/message_steering/registry_transcript.ndjson": {
+      "upstreamBlob": "0ffbf65d3f37cd8f784acf6155091244695f1d7b",
+      "resultBlob": "51b1f94568d202e260c284ba6d6317cd7850d131",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/claude_transcript.ndjson": {
+      "upstreamBlob": "5c5826ffccc2419fab9ebd9de390f7c0f2e7397c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/codex_transcript.ndjson": {
+      "upstreamBlob": "709bfd752344d844279fb7df78cda066d674fe01",
+      "resultBlob": "696bcc15fb054765a4c660a25abf828b2485883d",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/cursor_transcript.ndjson": {
+      "upstreamBlob": "2656129a0572d6e313a904cc054c59367bbc212c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/fx_transcript.ndjson": {
+      "upstreamBlob": "d394fdf4c778aed3f093570612c8d4150c9d89fd",
+      "resultBlob": "8443d61f74d26a7c2a85eaa252081a1ebc9fe10d",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/grok_transcript.ndjson": {
+      "upstreamBlob": "470e15d963420573cfb3c9929a05fe7ee0e24e93",
+      "resultBlob": "29b569d52125b89316b7546a94aaf972df21012e",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/kiro_transcript.ndjson": {
+      "upstreamBlob": "0ca4d283e87a7a951b1a6db4aeae538a00536b3f",
+      "resultBlob": "381212c102eec6a354622a172aa97473755e74e7",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/muse_transcript.ndjson": {
+      "upstreamBlob": "f7d7d8ed08c11abaa2cb0f46b73b0cb1cf2d4524",
+      "resultBlob": "8e3daf178a239e06661075df4484d7f62929da64",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ],
+        [
+          11,
+          "Lancer"
+        ],
+        [
+          12,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/pi_transcript.ndjson": {
+      "upstreamBlob": "5841abd415c1d93c45342867dc4614526c65c67c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn/registry_transcript.ndjson": {
+      "upstreamBlob": "1c1b70bc9ac65525fdc6fa8dd5eaaa707565491a",
+      "resultBlob": "a21075967379d7f4983d3627be77a0ecf573092b",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/multi_turn_restart/claude_transcript.ndjson": {
+      "upstreamBlob": "70de0f791d61b5bc8c480cd3dbd3a14ed586d068"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/muse_permission/muse_transcript.ndjson": {
+      "upstreamBlob": "a744381b64632b8eee16d0de29a44be047ab9325",
+      "resultBlob": "374eb2d17620290a9464c4c385154110f2f07cbe",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ],
+        [
+          11,
+          "Lancer"
+        ],
+        [
+          12,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/muse_subagent_approval/muse_transcript.ndjson": {
+      "upstreamBlob": "9d7c7e624126b11cec00623702c57bab5e3626c6",
+      "resultBlob": "5b5fa0b8490d61ef6fd28df3ae94108cd511ab33",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/muse_subagent_interrupt/muse_transcript.ndjson": {
+      "upstreamBlob": "589ac53afc7b6f81c5530ffe5431d7ebfcb346ae",
+      "resultBlob": "8e924f62072b6aa6c088a288522ca34594c13d89",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/muse_workflow/muse_transcript.ndjson": {
+      "upstreamBlob": "b8616cdee6a1628092aab0a5edbdcb77185b2d3a",
+      "resultBlob": "b258571c738a0296be44ed62a44d41d809152110",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_background/opencode_transcript.ndjson": {
+      "upstreamBlob": "104b2c2aadf6873806ab000b79b5a9c844ab9750"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_command/opencode_transcript.ndjson": {
+      "upstreamBlob": "36c35d5799ad0af7070d8e3cb72cf0c5b32af3bd"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_compaction/opencode_transcript.ndjson": {
+      "upstreamBlob": "3469e11199a2df8a8fd83b90f4a1443c16a19a07"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_fork/opencode_transcript.ndjson": {
+      "upstreamBlob": "a483f04813b31eae8c6f9e4c64640881856f28ac"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_inbox/opencode_transcript.ndjson": {
+      "upstreamBlob": "b0f63d8ee9282096667fe5fd573023e62e2a5296"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_interrupt/opencode_transcript.ndjson": {
+      "upstreamBlob": "ce4c048e1900080623a3324e565413aba652dd96"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_missing_step_usage/opencode_transcript.ndjson": {
+      "upstreamBlob": "a15b2adbc1da453f8bc20800e9fe1260a3211fa4"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_nested_background/opencode_transcript.ndjson": {
+      "upstreamBlob": "4204f275fd8dc3055a19b9921609787f1f152170"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_permission/opencode_transcript.ndjson": {
+      "upstreamBlob": "5883f74adbb5d231f8e133fc1fe93a19693fcd0b"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_question/opencode_transcript.ndjson": {
+      "upstreamBlob": "b36930e840a25b5975482fbb07fe1656ee4c54a4"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_resume_after_restart/opencode_transcript.ndjson": {
+      "upstreamBlob": "71c807f28abb09b936a4de84a4dbd36a24e3ffd2"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_revert/opencode_transcript.ndjson": {
+      "upstreamBlob": "bbf51a68926f608c6c0106324a38072fa499a4c7"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_simple/opencode_transcript.ndjson": {
+      "upstreamBlob": "17b02dae519b98edc490d287279bdfbe64f8ee10"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_skill/opencode_transcript.ndjson": {
+      "upstreamBlob": "77dc36fbc42b593ffb3e38768f75df706b710cb9"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_subagent/opencode_transcript.ndjson": {
+      "upstreamBlob": "e5fee23954291bd0ab6f02cffce62b9b99124e64"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode2_tool_call/opencode_transcript.ndjson": {
+      "upstreamBlob": "64e5eff7d73ad8eca474191c59b1054b2f95201e"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode_child_approval/opencode_transcript.ndjson": {
+      "upstreamBlob": "822060cd4913c467e71e914979754ef762de8723"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode_running_child_approval/opencode_transcript.ndjson": {
+      "upstreamBlob": "31e72c8f087726b07665bd73b7bdb0cac4818e5a"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/opencode_subagent/opencode_transcript.ndjson": {
+      "upstreamBlob": "182bf5ed2c710f4eed7c6cca1099fa46e0190b03"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/pi_compaction/pi_transcript.ndjson": {
+      "upstreamBlob": "39243d970f6d92163dc4997740462b8c9cc3ae91"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/plan_questions/codex_transcript.ndjson": {
+      "upstreamBlob": "66d81847bb33494010eaa0e10eade9bf8c110fa5",
+      "resultBlob": "72e9e77214921c44de28961e23364cc11e28e3ee",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/plan_questions/grok_transcript.ndjson": {
+      "upstreamBlob": "215d3247dbc9db548fa88843883fd0007cca2848",
+      "resultBlob": "ab6ee6fa87fec1050fce1c388ce46b7a84d4141b",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/plan_questions/opencode_transcript.ndjson": {
+      "upstreamBlob": "3669e9a61b382ff00563804e81674405d3455392"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/proposed_plan/codex_transcript.ndjson": {
+      "upstreamBlob": "42893646004d68880a271968f21606efe6e9083d",
+      "resultBlob": "6c52651e2ede6302627e703da4bed5f0aba52e49",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/proposed_plan/cursor_transcript.ndjson": {
+      "upstreamBlob": "b444a5c55e623b39ac1ccadb695a317fff804fac"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/provider_thread_resume/codex_transcript.ndjson": {
+      "upstreamBlob": "bcfd4dc5434b47df93ba4bea9d58db7f1673d137",
+      "resultBlob": "da4a9f01f8efb5b44172ddb06e6a33d87dd360f3",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          16,
+          "Lancer"
+        ],
+        [
+          17,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/provider_thread_resume/cursor_transcript.ndjson": {
+      "upstreamBlob": "d9a907464b13767e46bd7ea20b504357983ded69"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/provider_thread_resume/kiro_transcript.ndjson": {
+      "upstreamBlob": "2f5d9833e73c79768546f3e9d9cead9651c61370",
+      "resultBlob": "70a8f7cf09f66c00f5f25d2dd555c270d1f786fd",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/provider_thread_resume/pi_transcript.ndjson": {
+      "upstreamBlob": "c86c6f198f582824fdfcd7135e5c0a20715f7a7c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/claude_transcript.ndjson": {
+      "upstreamBlob": "b4a17e2511be94adcf9d29e9336815dbcf98a1ce"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/codex_transcript.ndjson": {
+      "upstreamBlob": "c16a87d6bb702cb77b685c54be1f069268b0e507",
+      "resultBlob": "d0fd9e496c749995667c2fc3a23d21b907387b64",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/cursor_transcript.ndjson": {
+      "upstreamBlob": "68a04dbb332e9b236cc0ea785d9badab593848c7"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/fx_transcript.ndjson": {
+      "upstreamBlob": "6780dd2a3ad485eb1d46338d2db45b9b96736cad",
+      "resultBlob": "e952932df3b9ae5c0d6875ed0494c4a75874caf6",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/grok_transcript.ndjson": {
+      "upstreamBlob": "e1343593df519f4e229f025ac7577da149ff2ea0",
+      "resultBlob": "d9cd4fa2dfcba9a82e44aa78897746cd3fa1f3f2",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/kiro_transcript.ndjson": {
+      "upstreamBlob": "73a21b301051ef06ba802b9fb4584622fd2a1861",
+      "resultBlob": "b2282feb011ad3d7099b58a8a884b1c36fe0946c",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/queued_turn/registry_transcript.ndjson": {
+      "upstreamBlob": "57037d8bc7ec829df61c759fa88b1f89c7bdd6c8",
+      "resultBlob": "ec43d882ce9532489e9bcb4f4dfe2f536583d5e8",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/claude_transcript.ndjson": {
+      "upstreamBlob": "0c1d647473b0b610cd4d3158adb515eb89c8401e"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/codex_transcript.ndjson": {
+      "upstreamBlob": "957f8d9536d98ce5c7a5b1b693b672e83fadf437",
+      "resultBlob": "162d92d338c4169beadb795463d29e7b17c177b7",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/cursor_transcript.ndjson": {
+      "upstreamBlob": "65bf452ee8d80fa600df6d3a80fd68ef43f6effc"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/fx_transcript.ndjson": {
+      "upstreamBlob": "84d694c6a157549ab20e3fd477e2212e0c7bacdf",
+      "resultBlob": "2596465b62c53df40d996269ec819854a1f3ed3a",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/grok_transcript.ndjson": {
+      "upstreamBlob": "463c61b43fd172b5629c4207bda4900c163696f6",
+      "resultBlob": "6618d080a46df932e7f956644a99eb7177829538",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/kiro_transcript.ndjson": {
+      "upstreamBlob": "1e9a0c0412442c8c21d31e0068f63c596164c859",
+      "resultBlob": "e341c8b66db80b68884bf08cfddcb0d54037e97a",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/muse_transcript.ndjson": {
+      "upstreamBlob": "1dc9f52719343b4245500aa3bf513d96b912e11e",
+      "resultBlob": "905ee79eb0c2eacb9b4569d58c9da45d13a219ec",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/opencode_transcript.ndjson": {
+      "upstreamBlob": "cef5cd8213d569a3016c690e06109febbc105ed6"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/pi_transcript.ndjson": {
+      "upstreamBlob": "61c3eb45d7ca5e6e90c06b50a48574b41fd1a52a"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/simple/registry_transcript.ndjson": {
+      "upstreamBlob": "91bff52c8086f70f1ae2217d051a81a9f707b208",
+      "resultBlob": "c629480f32962121cc6355cdac324b167bb68d42",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/skill_invocation/cursor_transcript.ndjson": {
+      "upstreamBlob": "56dc67e7389f7e197a2f5ea8c5e57bbb8ab09bba"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/stop_background_work_after_failed_turn/registry_transcript.ndjson": {
+      "upstreamBlob": "0ac4f144cb7c47ba7ee593c69986af4b5978bda5",
+      "resultBlob": "580109b37c486ed4ec73481567d1536909f352fe",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent/claude_transcript.ndjson": {
+      "upstreamBlob": "d54b2f8bb0e2a1802da9bea68d4cf757da865a98"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent/codex_transcript.ndjson": {
+      "upstreamBlob": "195f4e58a5f02f60dbef8f107336568aa46ff7f8",
+      "resultBlob": "94f10ad849e0868a12df57e29c76438ac287eeec",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent/cursor_transcript.ndjson": {
+      "upstreamBlob": "ec02cec0d6fd25454fee0a47e5385312a7ff3b72"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent/kiro_transcript.ndjson": {
+      "upstreamBlob": "5f26257d395f9d0f97861987a1460b15229be5ed",
+      "resultBlob": "7525250deac98c013ba7a4632dbb0592cbe41591",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_continue/codex_transcript.ndjson": {
+      "upstreamBlob": "a603cfb168dddf4bcc4ca88859051773a44c4ff6",
+      "resultBlob": "315583418c7854c65128e566a0c4a95b95d753e9",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_v2/codex_transcript.ndjson": {
+      "upstreamBlob": "424321668e824180b1caef6967738458dc113741",
+      "resultBlob": "24068018351f667857cdd6716d0c8ff866e25e9f",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_v2/muse_transcript.ndjson": {
+      "upstreamBlob": "aac7fd36214a799382fa991eb5b4281fdffa3437",
+      "resultBlob": "c5093784e2aa3a1486b08130738f7eec9969c6ec",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_v2_approval/codex_transcript.ndjson": {
+      "upstreamBlob": "d29289295de5a31444b1d7c7d8813b0178934936",
+      "resultBlob": "b63998c497871f2bc7dbbdda0f75a722596b916b",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_v2_nested/codex_transcript.ndjson": {
+      "upstreamBlob": "3bc383b9ace0b2b19212cc500b26bef6be1bb062",
+      "resultBlob": "d9166755bff569ff0558d791957d27d8ccfd1651",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/subagent_v2_nested_approval/codex_transcript.ndjson": {
+      "upstreamBlob": "30c2141459714089eca35964a951832a31dc8860",
+      "resultBlob": "fc6e468ebf705627c80011bd32be3cc492b9be92",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_fork_native/claude_transcript.ndjson": {
+      "upstreamBlob": "cd24f67e98caa0917a80d5c79262a9d1d7e92769"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_fork_native_fork_local_rollback/claude_transcript.ndjson": {
+      "upstreamBlob": "317d51456cb752e7d80a82f4f21e04f74c04dacc"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_fork_native_prior_turn/claude_transcript.ndjson": {
+      "upstreamBlob": "f65c071d7bf3ac8dca2c79d5ab49381b81d27d20"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_fork_native_prior_turn/codex_transcript.ndjson": {
+      "upstreamBlob": "a728d65346667a63609420d1f396b8d2fea655b3",
+      "resultBlob": "8033575b08255be9fe53bfe680752cf0f0bcad20",
+      "edits": [
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          2,
+          "Lancer"
+        ],
+        [
+          21,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_merge_back_siblings/claude_transcript.ndjson": {
+      "upstreamBlob": "37ada38b28b58861f4ac8fef698b36c6f055061b"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_merge_back_siblings/codex_transcript.ndjson": {
+      "upstreamBlob": "23768db917875526affb27c76fef3d03988942f5",
+      "resultBlob": "54732a1c0d676806e3fdf79f01e5c61e36be40a5",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback/claude_transcript.ndjson": {
+      "upstreamBlob": "fae862d128069a90069db59d43aa4e2fa1c781f5"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback/codex_transcript.ndjson": {
+      "upstreamBlob": "1526a453abdfdd56ccb7149b267582cca249304e",
+      "resultBlob": "61a34e2dd3125a84f5b30b0603103663c56cbe15",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback/pi_transcript.ndjson": {
+      "upstreamBlob": "44aeb73c4ceee945244a8bbcd9adcf5110aa8abb"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback_after_restart/codex_transcript.ndjson": {
+      "upstreamBlob": "d5dfddc6328f648d27d00750128e6af612377e7e",
+      "resultBlob": "b878063aeba2a0a5860ac0c23a7e8490aad0d4fa",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          16,
+          "Lancer"
+        ],
+        [
+          17,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback_after_stop/pi_transcript.ndjson": {
+      "upstreamBlob": "a024d2db1416eb0ae3e5f63586cb5b83e699d064"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/thread_rollback_to_stopped_turn/codex_transcript.ndjson": {
+      "upstreamBlob": "6a0e9143bebb48ee540b14f81beed2926dfcc727",
+      "resultBlob": "3660e95e3d94000c2325f6502050da7f57725178",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/todo_list/codex_transcript.ndjson": {
+      "upstreamBlob": "cdef4a5e34484da48bebe69a3efb063d95e6c34b",
+      "resultBlob": "fbc56ebdd476e2b4db394b07c860a1bdc98cf9e2",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/todo_list/cursor_transcript.ndjson": {
+      "upstreamBlob": "257f5a3aa664793e4cc452075cf71f657bed8dbe"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/todo_list/grok_transcript.ndjson": {
+      "upstreamBlob": "ae5bb950d93c882336f730f7ed02a483487fc518",
+      "resultBlob": "62060dd7f46ce7d9d95adeb45b8fd0dc3658134b",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/todo_list/registry_transcript.ndjson": {
+      "upstreamBlob": "ad1d60d85b1097fb17f56b8e7e0218d90d9d5b25",
+      "resultBlob": "025f594b03bfb289dd4aa7dfd83980e13c8dc5fe",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_denied_write/claude_transcript.ndjson": {
+      "upstreamBlob": "3264cb81c2d42d36d9328bdad6bbdd1fa75d1528"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_denied_write/fx_transcript.ndjson": {
+      "upstreamBlob": "6a1c048f6aff958b682e9220acc7a1b480bd5305",
+      "resultBlob": "f5964e6caa5e0a547fef6570c798871dc527a68e",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only/claude_transcript.ndjson": {
+      "upstreamBlob": "cdbe3fca8b8056f2f35224906436fefb3f9654a9"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only/cursor_transcript.ndjson": {
+      "upstreamBlob": "749a86dbc34f0af0e6c87663bb2eb602230fb6aa"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only/grok_transcript.ndjson": {
+      "upstreamBlob": "16ba3978aff922d5fc8d98d45396179658e25650",
+      "resultBlob": "f08040e43ae08523695fb1c7a8d99596cb9fd0e1",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only/registry_transcript.ndjson": {
+      "upstreamBlob": "c40431a774a6b5734ed12a4dd41a42706c96cfe9",
+      "resultBlob": "b6576f3a1acaf678701b5d44d6f82aa191f9b80b",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/claude_transcript.ndjson": {
+      "upstreamBlob": "aebaa34d10aa93902802647f64cd35bf765ba061"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/codex_transcript.ndjson": {
+      "upstreamBlob": "f97ec297714a3b6d4f76351fef4491e86b8fc994",
+      "resultBlob": "d8aa184e4e143b50183c4c2a7cad2e6a31d4e725",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/fx_transcript.ndjson": {
+      "upstreamBlob": "34f26d8efb330e2743b17a8e7b2ce4049912a366",
+      "resultBlob": "3a81aa7414eb7d5fbe97e8d423a0ae2f0737fc7c",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/grok_transcript.ndjson": {
+      "upstreamBlob": "7d11fc4746fb383fc0d8d13454e736848691e8b4",
+      "resultBlob": "09a5ade29f4fd533c52665d2b0899268272b94e0",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/kiro_transcript.ndjson": {
+      "upstreamBlob": "cd6d095d1a9106b8baeb97ca1ccdf569eba5ea58",
+      "resultBlob": "c83da2deb2b87d1e2d8e068fe109ea88ef2683e2",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_read_only_on_request/registry_transcript.ndjson": {
+      "upstreamBlob": "01bde87c4178d8f86e471767b13975ffa767a5b6",
+      "resultBlob": "ec4191e0dfe5d40c73354a8c25261addbe445962",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_restricted_granular/claude_transcript.ndjson": {
+      "upstreamBlob": "7c4bf9364e35a4fa838cb2a83eba8991a6a6fa9c"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_restricted_granular/codex_transcript.ndjson": {
+      "upstreamBlob": "b563d3cc3824fabb51c4977ffe9335b7d9bc4be2",
+      "resultBlob": "67419525a3245c1983de7b9a553d153f3621e865",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_workspace_never/claude_transcript.ndjson": {
+      "upstreamBlob": "b5f97acf5d390365f8ca1fd90b7fa631109fec65"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/tool_call_workspace_never/codex_transcript.ndjson": {
+      "upstreamBlob": "255049e96f1eb18ed7bd3ac2c76d9e2b766c89e6",
+      "resultBlob": "ff046a68a46710bb59036603f5b0cf391120e11c",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/claude_transcript.ndjson": {
+      "upstreamBlob": "bb068e663e6ab4ff6c3e7f52c0663d3f31b49d82"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/codex_transcript.ndjson": {
+      "upstreamBlob": "8db38faa3252e42caf02f198932c99eee5f38e4d",
+      "resultBlob": "f39c9a67918e5be512db07cdc89877f372864d6d",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/fx_transcript.ndjson": {
+      "upstreamBlob": "c0e0b356fdd8da494aad284a902e3ab2a4d9e33e",
+      "resultBlob": "0b58d19068e523c6980bd9fce72ae1d49c712a9c",
+      "edits": [
+        [
+          1,
+          "lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/grok_transcript.ndjson": {
+      "upstreamBlob": "5cdbc179a51827150308b796f6ea1a15d79e8bcd",
+      "resultBlob": "2fdeabfdf8d5ed6869cad77f564fe8444eaeb8ee",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          7,
+          "lancer"
+        ],
+        [
+          10,
+          "lancer"
+        ],
+        [
+          14,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/kiro_transcript.ndjson": {
+      "upstreamBlob": "46a0f9ca5db4cf0685f1da745fe86a177e0922e4",
+      "resultBlob": "4930ca5886a57d853331caad7c6e240512729d00",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/muse_transcript.ndjson": {
+      "upstreamBlob": "7557908979c6a741d5b193ac2e44e32ee06a05da",
+      "resultBlob": "6c1e8214dfaa0eb9e5ee935eca6616f8eaa845e7",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          6,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/opencode_transcript.ndjson": {
+      "upstreamBlob": "7dade4b7d2207f34b48d1b2d06b34c4d326883fe"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt/registry_transcript.ndjson": {
+      "upstreamBlob": "a7b530e7e1ff761b7016b2116db01600b9c894b7",
+      "resultBlob": "47554e7f52b13c41c2c14b6ab98932175c5c9d0a",
+      "edits": [
+        [
+          0,
+          "lancer"
+        ],
+        [
+          1,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_mid_tool/claude_transcript.ndjson": {
+      "upstreamBlob": "8e990888d46f4fc0e7d94ff7d31f34d939f1005f"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_mid_tool/codex_transcript.ndjson": {
+      "upstreamBlob": "5a70c0729d1a93d76d04e9b24c962ad5d88e1cd7",
+      "resultBlob": "ce8dcadb8b1282ab826e29193f6cf244c493dbe4",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_mid_tool/cursor_transcript.ndjson": {
+      "upstreamBlob": "cf31d680273ee65c536f6b25331cc0657893e6e4"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_mid_tool/kiro_transcript.ndjson": {
+      "upstreamBlob": "14887375f172459182a8675f7970b8b15fef68ed",
+      "resultBlob": "98f2ca865d3f925b6f5734e4e0fcfac11a8616f2",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ]
+      ]
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_mid_tool/pi_transcript.ndjson": {
+      "upstreamBlob": "072994e9d82a9b4e636c27f923a366115bd7c305"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/turn_interrupt_restart/claude_transcript.ndjson": {
+      "upstreamBlob": "ee77902045edcc0cd77fa339f2125cded4dbee1e"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/web_search/claude_transcript.ndjson": {
+      "upstreamBlob": "0b047f81bc9a24d0584602c9770d4b52b328f166"
+    },
+    "apps/server/src/orchestration-v2/testkit/fixtures/web_search/codex_transcript.ndjson": {
+      "upstreamBlob": "527487162687f74a1192906295959df3f0590381",
+      "resultBlob": "ec3af6f89d364d6cd62fc7a90745337907673711",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ]
+      ]
+    },
+    "evals/mcp-tool-use/cases/device-manager.ndjson": {
+      "upstreamBlob": "af4186072035bdace49ce89d345801866a4204cc"
+    },
+    "evals/mcp-tool-use/cases/orchestration.ndjson": {
+      "upstreamBlob": "41eb03e0939fc18c29a9642b526f4b31d65490df",
+      "resultBlob": "ab971cd8c755d73a47db5f974e173113d32316b7",
+      "edits": [
+        [
+          5,
+          "lancer"
+        ],
+        [
+          8,
+          "lancer"
+        ],
+        [
+          13,
+          "lancer"
+        ],
+        [
+          16,
+          "lancer"
+        ],
+        [
+          19,
+          "lancer"
+        ],
+        [
+          22,
+          "lancer"
+        ],
+        [
+          25,
+          "lancer"
+        ],
+        [
+          28,
+          "lancer"
+        ],
+        [
+          48,
+          "lancer"
+        ],
+        [
+          51,
+          "lancer"
+        ],
+        [
+          62,
+          "lancer"
+        ],
+        [
+          70,
+          "Lancer"
+        ],
+        [
+          116,
+          "Lancer"
+        ]
+      ]
+    },
+    "evals/mcp-tool-use/cases/projects.ndjson": {
+      "upstreamBlob": "b52ee4eff30bc89147cc47889c11632b64e7647f",
+      "resultBlob": "834b89c0c90aa706bf65f9b7440ae76c131c8780",
+      "edits": [
+        [
+          2,
+          "Lancer"
+        ]
+      ]
+    },
+    "evals/mcp-tool-use/cases/pull-requests.ndjson": {
+      "upstreamBlob": "2e14e45f7f250b42330b652b64ff8b4263034e22",
+      "resultBlob": "172923ec5618d8c07f0c86b2798c0bc5fcb0d642",
+      "edits": [
+        [
+          6,
+          "lancer"
+        ],
+        [
+          9,
+          "lancer"
+        ],
+        [
+          12,
+          "lancer"
+        ],
+        [
+          15,
+          "lancer"
+        ],
+        [
+          31,
+          "lancer"
+        ],
+        [
+          34,
+          "lancer"
+        ],
+        [
+          37,
+          "lancer"
+        ],
+        [
+          40,
+          "lancer"
+        ],
+        [
+          43,
+          "Lancer"
+        ],
+        [
+          44,
+          "Lancer"
+        ],
+        [
+          45,
+          "Lancer"
+        ],
+        [
+          46,
+          "Lancer"
+        ],
+        [
+          51,
+          "lancer"
+        ],
+        [
+          54,
+          "lancer"
+        ],
+        [
+          57,
+          "lancer"
+        ],
+        [
+          60,
+          "lancer"
+        ],
+        [
+          67,
+          "Lancer"
+        ],
+        [
+          68,
+          "lancer"
+        ],
+        [
+          71,
+          "lancer"
+        ],
+        [
+          74,
+          "Lancer"
+        ],
+        [
+          75,
+          "Lancer"
+        ],
+        [
+          76,
+          "lancer"
+        ],
+        [
+          79,
+          "lancer"
+        ],
+        [
+          87,
+          "Lancer"
+        ]
+      ]
+    },
+    "evals/mcp-tool-use/cases/secrets.ndjson": {
+      "upstreamBlob": "c06cf1b520751bbdbb042cf3bd3a8ff681b45a6d",
+      "resultBlob": "b544b1441ed0ea85517df955a8cc894d22e52ddb",
+      "edits": [
+        [
+          2,
+          "lancer"
+        ],
+        [
+          3,
+          "lancer"
+        ],
+        [
+          4,
+          "lancer"
+        ],
+        [
+          5,
+          "lancer"
+        ],
+        [
+          6,
+          "lancer"
+        ],
+        [
+          12,
+          "lancer"
+        ],
+        [
+          13,
+          "lancer"
+        ],
+        [
+          16,
+          "lancer"
+        ],
+        [
+          17,
+          "lancer"
+        ],
+        [
+          19,
+          "lancer"
+        ],
+        [
+          21,
+          "lancer"
+        ],
+        [
+          23,
+          "lancer"
+        ],
+        [
+          27,
+          "lancer"
+        ],
+        [
+          29,
+          "lancer"
+        ],
+        [
+          31,
+          "lancer"
+        ],
+        [
+          33,
+          "lancer"
+        ],
+        [
+          39,
+          "lancer"
+        ],
+        [
+          43,
+          "lancer"
+        ],
+        [
+          47,
+          "lancer"
+        ],
+        [
+          50,
+          "Lancer"
+        ],
+        [
+          51,
+          "lancer"
+        ]
+      ]
+    },
+    "evals/mcp-tool-use/cases/side-chats.ndjson": {
+      "upstreamBlob": "1dd4c70d3662a1bd0be3fff928880369e622fef3"
+    },
+    "evals/mcp-tool-use/cases/threads-vs-tasks.ndjson": {
+      "upstreamBlob": "0d714fd3651132ed6555dd4387fb2a9e4b221d06"
+    },
+    "evals/mcp-tool-use/cases/visual-preview.ndjson": {
+      "upstreamBlob": "c39a54218e6624406048c8e36e621538ec3cc5e8",
+      "resultBlob": "c194a2e533f92fbbee1dd1d07a20cf088cfa4d23",
+      "edits": [
+        [
+          0,
+          "Lancer"
+        ],
+        [
+          1,
+          "Lancer"
+        ],
+        [
+          2,
+          "lancer"
+        ],
+        [
+          5,
+          "Lancer"
+        ],
+        [
+          17,
+          "Lancer"
+        ],
+        [
+          26,
+          "Lancer"
+        ],
+        [
+          27,
+          "Lancer"
+        ],
+        [
+          28,
+          "Lancer"
+        ],
+        [
+          29,
+          "Lancer"
+        ],
+        [
+          30,
+          "Lancer"
+        ],
+        [
+          33,
+          "lancer"
+        ],
+        [
+          40,
+          "Lancer"
+        ],
+        [
+          52,
+          "Lancer"
+        ],
+        [
+          53,
+          "lancer"
+        ],
+        [
+          56,
+          "lancer"
+        ],
+        [
+          95,
+          "lancer"
+        ],
+        [
+          96,
+          "lancer"
+        ],
+        [
+          97,
+          "lancer"
+        ],
+        [
+          98,
+          "lancer"
+        ],
+        [
+          99,
+          "lancer"
+        ],
+        [
+          100,
+          "lancer"
+        ],
+        [
+          101,
+          "lancer"
+        ],
+        [
+          102,
+          "lancer"
+        ],
+        [
+          103,
+          "lancer"
+        ]
+      ]
+    },
+    "scripts/fixtures/desktop-launch/statev2.sqlite": {
+      "upstreamBlob": "4f17d3713117bccf7c68309a67ca48e25e2466b3"
+    },
+    "evals/mcp-tool-use/templates/claude.json.gz": {
+      "upstreamBlob": "86b451a5a03fb11c3b5ecfcd467c491ce23d0336"
+    },
+    "evals/mcp-tool-use/templates/codex.json.gz": {
+      "upstreamBlob": "cdf4f9ffbfd89ad8951f466a0ef8f203803ec7e7"
+    }
+  }
+}

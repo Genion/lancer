@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>ai.lancer.harness</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Lancer</name>
+  <summary>Local workspace for business agents</summary>
+  <developer id="ai.lancer">
+    <name>Lancer contributors</name>
+  </developer>
+  <description>
+    <p>
+      Lancer runs business agents in local workspaces. Inspect the files they
+      produce and follow their decisions in GitTree.
+    </p>
+    <p>
+      Connect from desktop, web, or mobile to continue working remotely.
+    </p>
+  </description>
+  <launchable type="desktop-id">lancer.desktop</launchable>
+  <icon type="stock">lancer</icon>
+  <provides>
+    <binary>lancer</binary>
+  </provides>
+  <categories>
+    <category>Development</category>
+  </categories>
+  <url type="homepage">https://github.com/raylee-ai/lancer</url>
+  <url type="bugtracker">https://github.com/raylee-ai/lancer/issues</url>
+  <url type="vcs-browser">https://github.com/raylee-ai/lancer</url>
+</component>

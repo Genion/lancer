@@ -1,0 +1,20 @@
+{
+  "platforms": ["apple", "android"],
+  "apple": {
+    "modules": ["LancerNativeControlsModule", "LancerKeyboardCommandsModule"],
+    "appDelegateSubscribers": [
+      "LancerWorkspaceOrientationSubscriber",
+      "LancerMenuDismissTouchGateSubscriber",
+      "LancerBackgroundGraceSubscriber"
+    ]
+  },
+  "android": {
+    "modules": [
+      "expo.modules.lancernativecontrols.LancerNativeControlsModule",
+      "expo.modules.lancernativecontrols.LancerWorkspaceNavigationModule",
+      "expo.modules.lancernativecontrols.LancerKeyboardCommandsModule",
+      "expo.modules.lancernativecontrols.LancerFoldPostureModule",
+      "expo.modules.lancernativecontrols.LancerSecretInputModule"
+    ]
+  }
+}

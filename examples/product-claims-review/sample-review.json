@@ -1,0 +1,33 @@
+{
+  "sku": "NL-R600",
+  "revision": "B",
+  "claims": [
+    {
+      "id": "C1",
+      "decision": "approve",
+      "proposed_copy": "Holds 600 mL.",
+      "evidence": [{ "source_id": "ENG-17", "quote": "The approved fill capacity is 600 mL." }],
+      "operator_question": null
+    },
+    {
+      "id": "C2",
+      "decision": "revise",
+      "proposed_copy": "Hand wash the bottle body.",
+      "evidence": [{ "source_id": "CARE-09", "quote": "Hand wash the bottle body." }],
+      "operator_question": null
+    },
+    {
+      "id": "C3",
+      "decision": "hold",
+      "proposed_copy": "Ridge 600 commuter bottle.",
+      "evidence": [
+        { "source_id": "PACK-31", "quote": "Pack two lids with each bottle." },
+        {
+          "source_id": "QA-08",
+          "quote": "Each of the six sealed cartons checked contained one lid."
+        }
+      ],
+      "operator_question": "For Ridge 600 revision B, should the local operator use a revision-specific recount or a corrected packing record to resolve whether the carton includes two lids per PACK-31 or one lid per QA-08 before releasing the lid-count claim?"
+    }
+  ]
+}

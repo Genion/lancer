@@ -1,0 +1,260 @@
+# Installs the Lancer CLI from a GitHub Release archive on Windows. Needs
+# only PowerShell 5.1+; no Node, npm, or compiler.
+#
+#   .\scripts\install.ps1
+#
+# Environment:
+#   LANCER_CHANNEL           release train to follow: stable, nightly, or preview
+#                            (default: stable; preview is a maintainers' test train)
+#   LANCER_VERSION           exact version to install (overrides LANCER_CHANNEL)
+#   LANCER_HOME              Lancer home directory (default: ~\.lancer)
+#   LANCER_INSTALL_BIN_DIR   where lancer.exe is linked (default: ~\.local\bin)
+#   LANCER_RELEASE_BASE_URL  mirror for releases/download (default: GitHub)
+#
+# The archive is unpacked into $LANCER_HOME\runtime\versions\<version>, the
+# same layout `lancer service install` uses, so the service reuses this download.
+$ErrorActionPreference = "Stop"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+$repo = "raylee-ai/lancer"
+$baseUrl = if ($env:LANCER_RELEASE_BASE_URL) { $env:LANCER_RELEASE_BASE_URL.TrimEnd("/") } else { "https://github.com/$repo/releases/download" }
+$lancerHome = if ($env:LANCER_HOME) { $env:LANCER_HOME } else { Join-Path $HOME ".lancer" }
+$binDir = if ($env:LANCER_INSTALL_BIN_DIR) { $env:LANCER_INSTALL_BIN_DIR } else { Join-Path $HOME ".local\bin" }
+# Absolute, so PATH never gets a folder that changes with the working directory.
+$binDir = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($binDir)
+
+function Fail([string] $message) {
+  Write-Error "lancer install: $message"
+  exit 1
+}
+
+$terminal = -not [Console]::IsErrorRedirected -and $env:TERM -ne "dumb"
+$interactive = $terminal -and $Host.UI.SupportsVirtualTerminal
+if ($interactive) {
+  # Legacy code pages may support ANSI escapes but not the logo or bar glyphs.
+  $glyphs = -join [char[]](0x2588, 0x2580, 0x2584, 0x25A0, 0x00B7)
+  $encoding = [Console]::Error.Encoding
+  $interactive = $encoding.GetString($encoding.GetBytes($glyphs)) -eq $glyphs
+}
+$esc = [char]27
+$reset = $bold = $muted = $accent = $green = ""
+if ($interactive -and -not $env:NO_COLOR) {
+  $reset = "$esc[0m"; $bold = "$esc[1m"; $muted = "$esc[2m"
+  $accent = "$esc[94m"; $green = "$esc[32m"
+}
+function Step([string] $message) {
+  if ($interactive) { [Console]::Error.Write("`r$esc[2K  $muted$message$reset") }
+  else { [Console]::Error.WriteLine("  $message") }
+}
+function Draw-Download([long] $bytes, [long] $total) {
+  if (-not $interactive) { return }
+  $columns = [Console]::WindowWidth
+  if ($columns -le 0) { $columns = 80 }
+  if ($total -gt 0 -and $columns -ge 9) {
+    $percent = [Math]::Min(100, [Math]::Floor($bytes * 100.0 / $total))
+    $width = [Math]::Min(32, $columns - 8)
+    $filled = [int][Math]::Floor($percent * $width / 100)
+    $bar = ([string][char]0x25A0) * $filled
+    $rest = ([string][char]0x00B7) * ($width - $filled)
+    $sizes = ("  {0:F1} / {1:F1} MB" -f ($bytes / 1MB), ($total / 1MB))
+    if ($width + 7 + $sizes.Length -ge $columns) { $sizes = "" }
+    [Console]::Error.Write(("`r$esc[2K  $accent$bar$reset$muted$rest$reset {0,3}%" -f $percent) + "$muted$sizes$reset")
+  } else {
+    $line = if ($columns -ge 32) { "  Downloading  {0:F1} MB" -f ($bytes / 1MB) } else { "  {0:F1} MB" -f ($bytes / 1MB) }
+    [Console]::Error.Write("`r$esc[2K" + $line.Substring(0, [Math]::Min($line.Length, $columns - 1)))
+  }
+}
+function Fetch([string] $uri, [string] $destination, [switch] $progress) {
+  if (-not $progress -or -not $interactive) {
+    $ProgressPreference = if ($progress -and $terminal) { "Continue" } else { "SilentlyContinue" }
+    Invoke-WebRequest -Uri $uri -OutFile $destination -UseBasicParsing
+    return
+  }
+  Add-Type -AssemblyName System.Net.Http
+  $client = New-Object System.Net.Http.HttpClient
+  $response = $source = $file = $null
+  try {
+    $response = $client.GetAsync($uri, [System.Net.Http.HttpCompletionOption]::ResponseHeadersRead).GetAwaiter().GetResult()
+    $response.EnsureSuccessStatusCode() | Out-Null
+    $source = $response.Content.ReadAsStreamAsync().GetAwaiter().GetResult()
+    $file = [IO.File]::Create($destination)
+    $buffer = New-Object byte[] 65536
+    $bytes = 0L
+    $clock = [Diagnostics.Stopwatch]::StartNew()
+    Draw-Download 0 $response.Content.Headers.ContentLength
+    while (($count = $source.Read($buffer, 0, $buffer.Length)) -gt 0) {
+      $file.Write($buffer, 0, $count)
+      $bytes += $count
+      if ($clock.ElapsedMilliseconds -ge 100) {
+        Draw-Download $bytes $response.Content.Headers.ContentLength
+        $clock.Restart()
+      }
+    }
+    Draw-Download $bytes $bytes
+    [Console]::Error.WriteLine()
+  } finally {
+    if ($file) { $file.Dispose() }
+    if ($source) { $source.Dispose() }
+    if ($response) { $response.Dispose() }
+    $client.Dispose()
+  }
+}
+if ($interactive) {
+  # Block characters are constructed so this file also loads correctly in PowerShell 5.1.
+  $mark = @(
+    "########## ######## ",
+    "    ###       _##^  ",
+    "    ###       ####_ ",
+    "    ###    _     ###",
+    "    ###    #######^ "
+  )
+  [Console]::Error.WriteLine()
+  for ($i = 0; $i -lt $mark.Length; $i++) {
+    $row = $mark[$i].Replace('#', [char]0x2588).Replace('^', [char]0x2580).Replace('_', [char]0x2584)
+    $label = if ($i -eq 1) { "     ${bold}Lancer$reset" } elseif ($i -eq 2) { "     ${muted}CLI installer$reset" } else { "" }
+    [Console]::Error.WriteLine("  $bold$row$reset$label")
+  }
+  [Console]::Error.WriteLine()
+}
+Step "Finding your release..."
+
+# PROCESSOR_ARCHITEW6432 bypasses WOW64 emulation; 5.1 hosts can lack RuntimeInformation's required .NET version.
+$rawArch = if ($env:PROCESSOR_ARCHITEW6432) { $env:PROCESSOR_ARCHITEW6432 } else { $env:PROCESSOR_ARCHITECTURE }
+$arch = switch ($rawArch) {
+  "AMD64" { "x64" }
+  "ARM64" { "arm64" }
+  default { Fail "unsupported architecture $rawArch" }
+}
+
+$channel = if ($env:LANCER_CHANNEL) { $env:LANCER_CHANNEL } else { "stable" }
+$version = $env:LANCER_VERSION
+if (-not $version) {
+  $tagPattern = switch ($channel) {
+    "stable" { '^harness-v\d+\.\d+\.\d+$' }
+    "nightly" { '^harness-v\d+\.\d+\.\d+-nightly\.\d+\.\d+$' }
+    "preview" { '^harness-v\d+\.\d+\.\d+-preview\.\d+\.\d+$' }
+    default { Fail "LANCER_CHANNEL must be stable, nightly, or preview" }
+  }
+  $tag = $null
+  for ($page = 1; -not $tag; $page++) {
+    $releases = Invoke-RestMethod -Uri "https://api.github.com/repos/$repo/releases?per_page=100&page=$page" -Headers @{ "User-Agent" = "lancer-install" }
+    $tag = ($releases | Where-Object { -not $_.draft -and $_.tag_name -match $tagPattern } | Select-Object -First 1).tag_name
+    if (-not $releases) { break }
+  }
+  if (-not $tag) { Fail "could not find a $channel release; set LANCER_VERSION" }
+  $version = $tag.Substring("harness-v".Length)
+}
+if ($version -match '-preview\.') {
+  Write-Warning "lancer $version is a preview build. Preview builds are cut by maintainers from unreleased branches to exercise the release pipeline. They can be broken, receive no fixes, and are never offered as updates. Set LANCER_CHANNEL=stable (the default) for a supported build."
+  if ($channel -ne "preview" -and -not $env:LANCER_VERSION) {
+    Fail "refusing a preview build that was not explicitly requested"
+  }
+}
+
+$stem = "lancer-$version-win32-$arch"
+$archive = "$stem.zip"
+$versionsDir = Join-Path $lancerHome "runtime\versions"
+$targetDir = Join-Path $versionsDir $version
+$marker = Join-Path $targetDir ".install-complete"
+
+if ((Test-Path $marker) -and ((Get-Content $marker -Raw).Trim() -eq $version)) {
+  Step "Version $version is already downloaded."
+} else {
+  New-Item -ItemType Directory -Force -Path $versionsDir | Out-Null
+  $staging = Join-Path $versionsDir (".staging-" + [System.IO.Path]::GetRandomFileName())
+  New-Item -ItemType Directory -Path $staging | Out-Null
+  try {
+    if ($interactive) { [Console]::Error.Write("`r$esc[2K") }
+    [Console]::Error.WriteLine("  ${muted}Installing$reset Lancer $bold$version$reset`n")
+    Step "Downloading..."
+    try {
+      Fetch "$baseUrl/harness-v$version/SHA256SUMS" (Join-Path $staging "SHA256SUMS")
+    } catch {
+      $status = $_.Exception.Response.StatusCode.value__
+      if ($status -eq 404) {
+        Fail "lancer $version has no release archive for win32-$arch; run from the source checkout"
+      }
+      throw
+    }
+    Fetch "$baseUrl/harness-v$version/$archive" (Join-Path $staging $archive) -progress
+
+    Step "Verifying the download..."
+
+    $expected = (Get-Content (Join-Path $staging "SHA256SUMS") | Where-Object { $_ -match "\s\*?$([regex]::Escape($archive))$" } | Select-Object -First 1)
+    if (-not $expected) { Fail "$archive is not listed in SHA256SUMS" }
+    $expected = ($expected -split "\s+")[0].ToLowerInvariant()
+    $actual = (Get-FileHash -Algorithm SHA256 (Join-Path $staging $archive)).Hash.ToLowerInvariant()
+    if ($actual -ne $expected) { Fail "checksum mismatch for $archive" }
+
+    Step "Extracting Lancer..."
+    # The archive module reads the global preference, not the caller's local scope.
+    $savedProgress = $global:ProgressPreference
+    try {
+      $global:ProgressPreference = "SilentlyContinue"
+      Expand-Archive -Path (Join-Path $staging $archive) -DestinationPath $staging -Force
+    } finally { $global:ProgressPreference = $savedProgress }
+    Get-ChildItem (Join-Path $staging $stem) | Move-Item -Destination $staging
+    Remove-Item (Join-Path $staging $stem), (Join-Path $staging $archive), (Join-Path $staging "SHA256SUMS") -Recurse -Force
+
+    & (Join-Path $staging "lancer.exe") --version | Out-Null
+    if ($LASTEXITCODE -ne 0) { Fail "the downloaded executable does not run" }
+    Set-Content -Path (Join-Path $staging ".install-complete") -Value $version -NoNewline
+
+    if (Test-Path $targetDir) { Remove-Item $targetDir -Recurse -Force }
+    Move-Item $staging $targetDir
+  } catch {
+    if (Test-Path $staging) { Remove-Item $staging -Recurse -Force }
+    throw
+  }
+}
+
+Step "Setting up the lancer command..."
+New-Item -ItemType Directory -Force -Path $binDir | Out-Null
+$shim = Join-Path $binDir "lancer.cmd"
+# Replace only a shim that runs a version in this home; never the desktop app's or another lancer.
+if (Test-Path -LiteralPath $shim) {
+  $existingTarget = ""
+  # The shim is UTF-8 without a BOM; Windows PowerShell 5.1 reads files as ANSI by default.
+  # Only a shim exactly as written here counts; a user's wrapper that also runs lancer.exe does not.
+  $existing = [System.IO.File]::ReadAllText($shim, [System.Text.Encoding]::UTF8)
+  if ($existing -match '^@echo off\r?\n"([^"]+)" %\*\s*$') { $existingTarget = $Matches[1] }
+  # Full paths, so a target like versions\..\other cannot pass as ours.
+  $ownedPrefix = [System.IO.Path]::GetFullPath($versionsDir).TrimEnd('\', '/') + [System.IO.Path]::DirectorySeparatorChar
+  if ($existingTarget) { $existingTarget = [System.IO.Path]::GetFullPath($existingTarget) }
+  # Exactly <version>\lancer.exe, never another program inside a version.
+  $owned = $existingTarget.StartsWith($ownedPrefix, [System.StringComparison]::OrdinalIgnoreCase) -and
+    ($existingTarget.Substring($ownedPrefix.Length) -match '^[^\\/]+\\lancer\.exe$')
+  if (-not $owned) {
+    Fail "another lancer is already at $shim. Remove it and run this again, or run $(Join-Path $targetDir 'lancer.exe') directly."
+  }
+}
+# UTF-8 without a BOM: cmd.exe reads the shim as-is, and ASCII would corrupt
+# non-ASCII characters in the user's home path.
+[System.IO.File]::WriteAllText($shim, "@echo off`r`n`"$(Join-Path $targetDir 'lancer.exe')`" %*", (New-Object System.Text.UTF8Encoding $false))
+# Pruning keeps what this shim points at; a background service cannot see $binDir otherwise.
+$launchers = Join-Path $lancerHome "runtime\launchers"
+$shimPath = (Resolve-Path -LiteralPath $shim).Path
+if (-not ((Test-Path $launchers) -and ((Get-Content $launchers) -contains $shimPath))) {
+  [System.IO.File]::AppendAllText($launchers, "$shimPath`r`n", (New-Object System.Text.UTF8Encoding $false))
+}
+if ($interactive) { [Console]::Error.Write("`r$esc[2K") }
+[Console]::Error.WriteLine("  ${green}Installed Lancer $version$reset`n")
+if ($binDir.Contains(";")) {
+  # PATH would split the folder at the `;`, so name the command in full instead.
+  Write-Host "  Run ${bold}& '$($shim.Replace("'", "''"))'$reset to get started.`n"
+} else {
+  # Either side may end in a separator. Trim only here: a drive root keeps its `\` for Join-Path.
+  $added = ($env:PATH -split ";" | ForEach-Object { $_.TrimEnd('\', '/') }) -notcontains $binDir.TrimEnd('\', '/')
+  # `irm | iex` runs in the user's own session, so lancer works in this window right away.
+  # Last, so it never shadows another lancer.
+  if ($added) { $env:Path = "$env:Path;$binDir" }
+  # A lancer earlier on PATH runs instead, so name this one in full.
+  $first = Get-Command lancer -CommandType Application -ErrorAction SilentlyContinue | Select-Object -First 1
+  if ($first -and [System.IO.Path]::GetFullPath($first.Source) -ne [System.IO.Path]::GetFullPath($shimPath)) {
+    Write-Host "  Another lancer at $($first.Source) runs first, so run ${bold}& '$($shim.Replace("'", "''"))'$reset to use this one.`n"
+  } elseif ($added) {
+    Write-Host "  Run ${bold}lancer$reset to get started. For new windows, add $binDir to your PATH.`n"
+  } else {
+    Write-Host "  Run ${bold}lancer$reset to use Lancer here, or ${bold}lancer up$reset to use it from your other devices.`n"
+  }
+}
